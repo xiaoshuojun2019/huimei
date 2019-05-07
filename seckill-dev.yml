@@ -18,15 +18,15 @@ spring:
       maximum-pool-size: 20
       minimum-idle: 10
   rabbitmq:
-    virtual-host: /leyou
-    username: /leyou
-    password: leyou
-    host: 192.168.19.121
+    virtual-host: leyou
+    username: admin
+    password: admin
+    host: 127.0.0.1
     template:
       exchange: leyou.order.exchange
     publisher-confirms: true
   redis:
-    host: 192.168.19.121
+    host: 127.0.0.1
   jackson:
     default-property-inclusion: non_null # 配置json处理时忽略空值
   resources:
@@ -65,4 +65,4 @@ hystrix:
 leyou:
   jwt:
     cookieName: LY_TOKEN
-    pubKeyPath: G:\\tmp\\rsa\\rsa.pub # 公钥地址
+    pubKeyPath: E:\\tmp\\rsa\\rsa.pub # 公钥地址
