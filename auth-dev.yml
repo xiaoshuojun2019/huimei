@@ -7,26 +7,26 @@ spring:
     virtual-host: leyou
     username: admin
     password: admin
-    host: 127.0.0.1
+    host: 172.16.0.8
 eureka:
   client:
     service-url:
-      defaultZone: http://129.204.127.41:10086/eureka
+      defaultZone: http://119.29.134.37:10086/eureka
     registry-fetch-interval-seconds: 10
   instance:
     instance-id: ${spring.application.name}:${server.port}
     prefer-ip-address: true  #当你获取host时，返回的不是主机名，而是ip
-    ip-address: 127.0.0.1
+    ip-address: 119.29.134.37
     lease-expiration-duration-in-seconds: 10 #10秒不发送九过期
     lease-renewal-interval-in-seconds: 5 #每隔5秒发一次心跳
 leyou:
   jwt:
     secret: leyou@Login(Auth}*^31)&heiMa% # 登录校验的密钥
-    pubKeyPath: E:\\tmp\\rsa\\rsa.pub # 公钥地址
-    priKeyPath: E:\\tmp\\rsa\\rsa.pri # 私钥地址
-    expire: 300 # 过期时间,单位分钟
+    pubKeyPath: /tmp/rsa/rsa.pub # 公钥地址
+    priKeyPath: /tmp/rsa/rsa.pri # 私钥地址
+    expire: 3000 # 过期时间,单位分钟
     cookieName: LY_TOKEN
-    cookieMaxAge: 30
+    cookieMaxAge: 300
 
 ribbon:
   ConnectTimeout: 4000 # 连接超时时间(ms)
