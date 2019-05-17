@@ -50,7 +50,7 @@ hystrix:
 leyou:
   jwt:
     cookieName: LY_TOKEN
-    pubKeyPath: /tmp/rsa/rsa.pub # 公钥地址
+    pubKeyPath: rsa.pub # 公钥地址
   filter:
     allowPaths:
        /api/auth
