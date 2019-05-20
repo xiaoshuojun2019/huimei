@@ -6,12 +6,12 @@ spring:
   data:
     elasticsearch:
       cluster-name: elasticsearch
-      cluster-nodes: 127.0.0.1:9300
+      cluster-nodes: 172.16.0.8:9300
   rabbitmq:
     virtual-host: leyou
     username: admin
     password: admin
-    host: 127.0.0.1
+    host: 172.16.0.8
   jackson:
     default-property-inclusion: non_null # 配置json处理时忽略空值
   resources:
@@ -25,11 +25,11 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:10086/eureka
+      defaultZone: http://119.29.134.37::10086/eureka
     registry-fetch-interval-seconds: 5
   instance:
     instance-id: ${spring.application.name}:${server.port}
     prefer-ip-address: true  #当你获取host时，返回的不是主机名，而是ip
-    ip-address: 127.0.0.1
+    ip-address: 119.29.134.37:
     lease-expiration-duration-in-seconds: 10 #10秒不发送九过期
     lease-renewal-interval-in-seconds: 5 #每隔5秒发一次心跳

@@ -7,7 +7,7 @@ spring:
     virtual-host: leyou
     username: admin
     password: admin
-    host: 127.0.0.1
+    host: 172.16.0.8
   servlet:
     multipart:
       max-file-size: 10MB # 限制文件上传的大小
@@ -15,12 +15,12 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:10086/eureka
+      defaultZone: http://119.29.134.37:10086/eureka
   instance:
     lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳
     lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
     prefer-ip-address: true
-    ip-address: 127.0.0.1
+    ip-address: 119.29.134.37
     instance-id: ${spring.application.name}:${server.port}
 fdfs:
   so-timeout: 1501 #超时时间

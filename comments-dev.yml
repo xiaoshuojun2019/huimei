@@ -7,12 +7,12 @@ spring:
     name: comments-service
   data:
     mongodb:
-      host: 127.0.0.1
+      host: 172.16.0.8
       database: leyoudb
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/leyou?characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://172.16.16.16:3306/leyou?characterEncoding=UTF-8&useSSL=false
     username: root
-    password: 123456
+    password: xsj@2019
     hikari:
       maximum-pool-size: 20
       minimum-idle: 10
@@ -20,20 +20,20 @@ spring:
     virtual-host: leyou
     username: admin
     password: admin
-    host: 127.0.0.1
+    host: 172.16.0.8
   redis:
-    host: 127.0.0.1
+    host: 172.16.0.8
   jackson:
     default-property-inclusion: non_null # 配置json处理时忽略空值
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:10086/eureka
+      defaultZone: http://119.29.134.37:10086/eureka
     registry-fetch-interval-seconds: 5
   instance:
     instance-id: ${spring.application.name}:${server.port}
     prefer-ip-address: true  #当你获取host时，返回的不是主机名，而是ip
-    ip-address: 127.0.0.1
+    ip-address: 119.29.134.37
     lease-expiration-duration-in-seconds: 10 #10秒不发送九过期
     lease-renewal-interval-in-seconds: 5 #每隔5秒发一次心跳
 ribbon:
@@ -49,4 +49,4 @@ leyou:
     dataCenterId: 2
   jwt:
     cookieName: LY_TOKEN
-    pubKeyPath: E:\\tmp\\rsa\\rsa.pub # 公钥地址
+    pubKeyPath: /test/rsa.pub # 公钥地址
